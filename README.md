@@ -4,15 +4,17 @@ An end-to-end Power BI business intelligence project built to analyse sales perf
 
 > **Note:** This is a portfolio case study created using the Microsoft AdventureWorks sample dataset. The company and business scenario are fictional.
 
-## Dashboard preview
+## Dashboard Preview
 
-Add your strongest dashboard screenshot here:
+Below is the main executive dashboard from the AdventureWorks Power BI report.
 
-```markdown
-![Executive Dashboard](assets/executive-dashboard.png)
-```
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/faa0ad7b-7700-4461-8da1-25f735bec754"
+       alt="AdventureWorks Executive Dashboard"
+       width="1000">
+</p>
 
-### Live report
+## Live report
 
 [Open the interactive Power BI report](https://app.powerbi.com/reportEmbed?reportId=095ad57b-fad9-4de4-8344-08d5c6cb239e&autoAuth=true&ctid=65b52940-f4b6-41bd-833d-3033ecbcf6e1)
 
@@ -55,9 +57,7 @@ Customer segmentation, purchasing patterns, high-value customers, and revenue pe
 ### 4. Regional Analysis
 Sales and profitability by country, territory, and region.
 
-## Data model
-
-The model uses a relational structure with transaction-level fact tables and descriptive lookup tables.
+## Table View
 
 Typical tables include:
 
@@ -70,72 +70,21 @@ Typical tables include:
 - **Territory Lookup**
 - **Calendar Lookup**
 
-Add a screenshot of your actual model:
+## Data Model
 
-```markdown
-![Data Model](assets/data-model.png)
-```
+Built using a **star schema** with fact and dimension tables, one-to-many relationships, and reusable DAX measures.
 
-## Example DAX measures
-
-Add only the measures that exist in your report. A separate template is available in [`docs/DAX_MEASURES.md`](docs/DAX_MEASURES.md).
-
-Examples of portfolio-relevant measures:
-
-```DAX
-Total Revenue =
-SUMX(
-    'Sales Data',
-    'Sales Data'[Order Quantity] * RELATED('Product Lookup'[Product Price])
-)
-
-Total Profit =
-[Total Revenue] - [Total Cost]
-
-Return Rate =
-DIVIDE([Quantity Returned], [Quantity Sold], 0)
-
-Revenue per Customer =
-DIVIDE([Total Revenue], [Total Customers], 0)
-```
-
-## Key insights
-
-Replace these prompts with findings from your own dashboard:
-
-- Which product category generated the most revenue and profit?
-- Which regions performed above or below average?
-- Did increasing return volume reflect a worsening return rate, or simply higher sales?
-- Which customers or segments contributed the most value?
-- Which months showed the strongest or weakest performance?
-
-A good insight should include a finding, context, and business implication.
-
-**Example format:**
-
-> Bike returns increased in absolute volume, but the return rate remained relatively stable because bike sales increased at a similar pace. This suggests growth in returns was driven primarily by higher sales volume rather than deteriorating product quality.
-
-## Tools and skills demonstrated
-
-- Power BI Desktop
-- Power BI Service
-- Power Query
-- DAX
-- Data cleaning and transformation
-- Relational data modelling
-- Star/snowflake schema concepts
-- KPI design
-- Data visualisation
-- Business analysis
-- Insight communication
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fb0ae0a1-98d1-4bc2-837d-ef2001baf6a9"
+       alt="AdventureWorks Data Model"
+       width="1100">
+</p>
 
 ## Repository structure
 
 ```text
-adventureworks-power-bi-dashboard/
+adventureworks-project/
 ├── README.md
-├── index.html
-├── .gitignore
 ├── assets/
 │   ├── executive-dashboard.png
 │   ├── product-analysis.png
@@ -150,13 +99,6 @@ adventureworks-power-bi-dashboard/
 └── data/
     └── README.md
 ```
-
-## How to explore the project
-
-1. Review the dashboard screenshots in `assets/`
-2. Open the live Power BI report using the link above
-3. Review the project methodology and measures in `docs/`
-4. Download the `.pbix` file from `report/` if included
 
 ## Data source and attribution
 
